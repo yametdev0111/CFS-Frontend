@@ -19,3 +19,15 @@ export const receive = () => dispatch => {
     }
   })
 }
+
+export const receiveRecent = count => dispatch => {
+  axios.get("/normal/recent", count)
+  .then(response => {
+    if(response.data.result){
+      dispatch({
+        type: "RecentReview",
+        payload: response.data.data
+      });
+    }
+  })
+}

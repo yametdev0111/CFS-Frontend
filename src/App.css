@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+#cfstable thead {
+  background: lightgray;
+  font-weight: 700;
+}
+
+#cfstable {
+  text-align: center;
+}
+
+td {
+  border: 1px solid gray;
+}

@@ -3,8 +3,8 @@ import { BarChart } from '@mui/x-charts/BarChart';
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { receive } from "../redux/actions";
-import { receiveDetailReview } from "../redux/actions/review";
+import { receive, receiveDetailReview, receiveRecent } from "../redux/actions";
+import './../App.css';
 
 const valueFormatter = value => `${value}%`;
 
@@ -44,10 +44,12 @@ const AdminPage = () => {
   const review_normal = useSelector(state => state.review);
   const review_detail = useSelector(state => state.reviewdetail);
   const [detail, setDetail] = useState(series);
+  const recent = useSelector(state => state.reviewrecent);
 
   useEffect(() => {
     dispatch(receive());
     dispatch(receiveDetailReview());
+    dispatch(receiveRecent(10));
   }, [])
 
   useEffect(() => {
@@ -63,7 +65,6 @@ const AdminPage = () => {
       sx={{
         alignItems: "center",
         height: "100vh",
-        background: "lightgray"
       }}
     >
       <BarChart
@@ -94,6 +95,21 @@ const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
+
+      <table id="cfstable">
+        <thead>
+          <td>Stars</td>
+          <td>Comments</td>
+          <td>Time</td>
+        </thead>
+        {recent.map(val =>
+          <tr>
+            <td>{val.rating}</td>
+            <td>{val.review}</td>
+            <td>{val.createdAt}</td>
+          </tr>
+        )}
+      </table>
     </Container>
   );
 };
