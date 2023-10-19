@@ -7,27 +7,3 @@ export const send = review => {
     })
     .catch(error => { console.error(error); });
 }
-
-export const receive = () => dispatch => {
-  axios.get("/normal/get")
-  .then(response => {
-    if(response.data.result){
-      dispatch({
-        type: "Review",
-        payload: response.data.data
-      });
-    }
-  })
-}
-
-export const receiveRecent = count => dispatch => {
-  axios.get("/normal/recent", count)
-  .then(response => {
-    if(response.data.result){
-      dispatch({
-        type: "RecentReview",
-        payload: response.data.data
-      });
-    }
-  })
-}

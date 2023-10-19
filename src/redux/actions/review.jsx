@@ -7,16 +7,3 @@ export const sendDetailReview = review => {
     })
     .catch(error => { console.error(error); });
 }
-
-export const receiveDetailReview = () => dispatch => {
-  axios.get("/detail/get")
-  .then(response => {
-    if(response.data.result){
-      console.log("Detail Review Response ------------------------------>\n", response.data.data, "\n");
-      dispatch({
-        type: "ReviewDetailEdited",
-        payload: response.data.data
-      });
-    }
-  })
-}
