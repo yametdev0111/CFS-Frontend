@@ -86,8 +86,6 @@ const ReviewPage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
-        background: "linear-gradient(90deg, #08010F 0%, #05050A 100%)"
       }}
     >
       <Box

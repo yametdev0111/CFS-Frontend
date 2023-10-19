@@ -10,18 +10,24 @@ const valueFormatter = value => `${value}%`;
 
 const series = [
   {
-    data: [2, 3, 1, 4, 5],
-    label: 'Series A',
+    data: [0, 0, 0, 0, 0],
+    label: '🙁',
+    stack: 'total',
+    color: '#70AD47',
     valueFormatter
   },
   {
-    data: [3, 1, 4, 2, 1],
-    label: 'Series B',
+    data: [0, 0, 0, 0, 0],
+    label: '😐',
+    stack: 'total',
+    color: '#FFC000',
     valueFormatter
   },
   {
-    data: [3, 2, 4, 5, 1],
-    label: 'Series C',
+    data: [0, 0, 0, 0, 0],
+    label: '🙂',
+    stack: 'total',
+    color: '#ED7D31',
     valueFormatter
   }
 ];
@@ -70,10 +76,14 @@ const AdminPage = () => {
       <BarChart
         dataset={review_normal}
         yAxis={[ {
-          scaleType: 'band', dataKey: 'level'
+          scaleType: 'band',
+          dataKey: 'level'
         } ]}
         series={[ {
-          dataKey: 'percentage', label: '', valueFormatter
+          dataKey: 'percentage',
+          label: '',
+          color:"#D9D9D9",
+          valueFormatter
         } ]}
         xAxis={[{
           label: 'Percentage (%)',
@@ -96,17 +106,19 @@ const AdminPage = () => {
         {...chartSetting}
       />
 
-      <table id="cfstable">
-        <thead>
-          <td>Stars</td>
-          <td>Comments</td>
-          <td>Time</td>
+      <table className="cfstable">
+        <thead className="cfsrow">
+          <td className="cfscell">Stars</td>
+          <td className="cfscell">Comments</td>
+          <td className="cfscell">Time</td>
+          <td className="cfscell">Date</td>
         </thead>
         {recent.map(val =>
-          <tr>
-            <td>{val.rating}</td>
-            <td>{val.review}</td>
-            <td>{val.createdAt}</td>
+          <tr className="cfsrow">
+            <td className="cfscell">{val.rating}</td>
+            <td className="cfscell">{val.review}</td>
+            <td className="cfscell">{val.createdAt.time}</td>
+            <td className="cfscell">{val.createdAt.date}</td>
           </tr>
         )}
       </table>

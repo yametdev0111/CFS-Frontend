@@ -37,15 +37,36 @@
   }
 }
 
-#cfstable thead {
-  background: lightgray;
-  font-weight: 700;
-}
-
-#cfstable {
+.cfstable{
+  border-spacing: 0px;
   text-align: center;
 }
+.cfstable .cfsrow:first-child {
+  background: lightgray;
+  font-weight: 700;
 
-td {
+}
+
+.cfstable .cfsrow:first-child .cfscell {
+  border-top: 2px solid gray;
+}
+.cfstable .cfsrow:last-child .cfscell {
+  border-bottom: 2px solid gray;
+}
+
+.cfstable .cfsrow .cfscell:first-child {
+  border-left: 2px solid gray;;
+}
+
+.cfstable .cfsrow .cfscell:last-child {
+  border-right: 2px solid gray;;
+}
+
+.cfsrow .cfscell:nth-child(2) {
+  text-align: left;
+}
+
+.cfscell {
+  padding: 5px;
   border: 1px solid gray;
 }
