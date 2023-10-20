@@ -8,9 +8,9 @@ import {
   DrawerHeader, InputBox, Label, LinkItem, PageContainer, SubmitButton, BoxContainer, PageBox } from "../components";
 
 const Homepage = () => {
-  const colors = ['#ffea00', '#ba000d', '#ff7500', '#ffea00', '#a0ff00', '#06ff00'];
+  // const colors = ['#ffea00', '#ba000d', '#ff7500', '#ffea00', '#a0ff00', '#06ff00'];
   const navigate = useNavigate();
-  const [rating, setRating] = useState(3);
+  const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
 
   const onSubmit = () => {
@@ -32,7 +32,7 @@ const Homepage = () => {
             onChange={(event, newValue) => {
               setRating(newValue || 0);
             }}
-            style={{ color: colors[rating] }}
+            style={{ color: "#FFC000" }}
             emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
 
