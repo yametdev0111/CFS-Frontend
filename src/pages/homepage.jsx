@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoIcon from "../assets/images/logo.png"
 import Rating from '@mui/material/Rating';
-import StarIcon from '@mui/icons-material/Star';
 import { send } from "../redux/actions";
 import {
   DrawerHeader, InputBox, Label, LinkItem, PageContainer, SubmitButton, BoxContainer, PageBox } from "../components";
@@ -29,11 +28,11 @@ const Homepage = () => {
           
           <Rating
             value={rating}
+            size="large"
             onChange={(event, newValue) => {
               setRating(newValue || 0);
             }}
             style={{ color: "#FFC000" }}
-            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
 
           <Label text="Tell us about your experience. What did you like? What could we do better?" />

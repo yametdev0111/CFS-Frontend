@@ -22,8 +22,8 @@ const GoogleReviewPage = () => {
           <LinkItem to="/"><img src={LogoIcon} alt="Logo" /></LinkItem>
         </DrawerHeader>
         <BoxContainer>
-          <Label text="We appreciate your feedback and 5-star rating! Our team aims to make our customers happy." />
-          <Label text="Please also leave a public review on Google, so everyone can hear about what you liked." />
+          <Label text="We appreciate your feedback and 5-star rating! Our team aims to make our customers happy.🙂" />
+          <Label text="Please also leave a public review on Google, so everyone can hear about what you liked.👇" />
 
           <SubmitButton
             variant="contained"

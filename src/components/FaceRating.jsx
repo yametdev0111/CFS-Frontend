@@ -12,13 +12,13 @@ const StyledRating = styled( Rating )(({ theme }) => ({
 
 const customIcons = {
   1: {
-    icon: <SentimentVeryDissatisfiedIcon sx={{color: "#ba000d"}} />
+    icon: <SentimentVeryDissatisfiedIcon sx={{color: "#ED7D31"}} />
   },
   2: {
-    icon: <SentimentSatisfiedIcon sx={{color: "#ffea00"}} />
+    icon: <SentimentSatisfiedIcon sx={{color: "#FFC000"}} />
   },
   3: {
-    icon: <SentimentVerySatisfiedIcon sx={{color: "#06ff00"}} />
+    icon: <SentimentVerySatisfiedIcon sx={{color: "#70AD47"}} />
   },
 };
 

@@ -7,6 +7,7 @@ export const Label = (props) => {
     <Typography
       component="h1"
       sx={{
+        fontFamily: "Arial Light",
         fontWeight: 800,
         mb: 2,
         letterSpacing: 1,

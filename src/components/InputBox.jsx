@@ -9,7 +9,6 @@ export const InputBox = (props) => {
         id="outlined-multiline-static"
         label=""
         placeholder="Write a review what you felt."
-        focused
         multiline
         rows={5}
         fullWidth
