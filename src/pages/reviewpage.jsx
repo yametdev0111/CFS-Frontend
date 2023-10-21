@@ -20,10 +20,20 @@ const ReviewPage = () => {
   const [review, setReview] = useState("");
 
   const onSubmit = () => {
-    sendDetailReview({
-      review_score: rating,
-      review_text: review
-    });
+    if(
+      rating.cleanliness &&
+      rating.friendliness &&
+      rating.price &&
+      rating.quality &&
+      rating.wait
+    ) {
+      sendDetailReview({
+        review_score: rating,
+        review_text: review
+      });
+    } else {
+      alert("Please rate all the scores");
+    }
   }
 
   return (

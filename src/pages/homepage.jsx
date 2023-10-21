@@ -13,6 +13,10 @@ const Homepage = () => {
   const [review, setReview] = useState("");
 
   const onSubmit = () => {
+    if(!rating){
+      alert("Please rate any score");
+      return;
+    }
     send({ rating: rating, review: review })
     navigate( rating === 5 ? "/google" : "/detail" );
   }
