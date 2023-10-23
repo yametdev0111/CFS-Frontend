@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Box, Rating } from "@mui/material";
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
-import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
 
 const StyledRating = styled( Rating )(({ theme }) => ({
   '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
@@ -12,13 +12,13 @@ const StyledRating = styled( Rating )(({ theme }) => ({
 
 const customIcons = {
   1: {
-    icon: <SentimentVeryDissatisfiedIcon sx={{color: "#ED7D31"}} />
+    icon: <SentimentVeryDissatisfiedIcon sx={{color: "#FFC000"}} />
   },
   2: {
     icon: <SentimentSatisfiedIcon sx={{color: "#FFC000"}} />
   },
   3: {
-    icon: <SentimentVerySatisfiedIcon sx={{color: "#70AD47"}} />
+    icon: <SentimentSatisfiedAltIcon sx={{color: "#FFC000"}} />
   },
 };
 
@@ -52,7 +52,7 @@ export const FaceRating = (props) => {
           highlightSelectedOnly
           size="large"
         />
-        <Box sx={{ ml: 2, color: "white" }}> {text} </Box>
+        <Box sx={{ ml: 2 }}> {text} </Box>
       </Box>
     </>
   )

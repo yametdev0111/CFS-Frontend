@@ -57,18 +57,7 @@ const ReviewPage = () => {
 
           <InputBox value={review} func={setReview} />
 
-          <SubmitButton
-            variant="contained"
-            fullWidth
-            disableElevation
-            sx={{
-              borderRadius: "10px",
-              background: "linear-gradient(92deg, #6C13B6 35.74%, #6166C5 100%)",
-              mt: 1,
-              color: "#FFF",
-            }}
-            onClick={onSubmit}
-          >
+          <SubmitButton onClick={onSubmit}>
             Submit
           </SubmitButton>
         </BoxContainer>

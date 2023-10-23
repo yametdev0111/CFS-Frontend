@@ -1,9 +1,9 @@
 export const detailReviewRating = {
-  wait: 2,
-  friendliness: 2,
-  cleanliness: 2,
-  price: 2,
-  quality: 2
+  wait: 0,
+  friendliness: 0,
+  cleanliness: 0,
+  price: 0,
+  quality: 0
 }
 
 export const detailReviewKey = [

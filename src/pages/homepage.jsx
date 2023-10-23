@@ -28,7 +28,7 @@ const Homepage = () => {
           <LinkItem to="/"><img src={LogoIcon} alt="Logo" /></LinkItem>
         </DrawerHeader>
         <BoxContainer>
-          <Label text="How was our service?" />
+          <Label text="How was our service today?" />
           
           <Rating
             value={rating}
@@ -36,25 +36,14 @@ const Homepage = () => {
             onChange={(event, newValue) => {
               setRating(newValue || 0);
             }}
-            style={{ color: "#FFC000" }}
+            style={{ color: "#FFC000", fontSize: 44 }}
           />
 
           <Label text="Tell us about your experience. What did you like? What could we do better?" />
           
           <InputBox value={review} func={setReview} />
 
-          <SubmitButton
-            variant="contained"
-            fullWidth
-            disableElevation
-            sx={{
-              borderRadius: "10px",
-              background: "linear-gradient(92deg, #6C13B6 35.74%, #6166C5 100%)",
-              mt: 1,
-              color: "#FFF",
-            }}
-            onClick={onSubmit}
-          >
+          <SubmitButton onClick={onSubmit}>
             Submit
           </SubmitButton>
         </BoxContainer>

@@ -8,7 +8,7 @@ export const InputBox = (props) => {
       <TextField
         id="outlined-multiline-static"
         label=""
-        placeholder="Write a review what you felt."
+        placeholder="Write reviews or sugestions."
         multiline
         rows={5}
         fullWidth
