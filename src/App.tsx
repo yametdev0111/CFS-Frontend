@@ -1,11 +1,10 @@
 import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/homepage";
 import "react-toastify/dist/ReactToastify.css";
-import ReviewPage from "./pages/reviewpage";
-import GoogleReviewPage from "./pages/googlereview";
+import { Provider } from "react-redux";
+import store from "./redux/reducers";
+import { AdminPage, ClientPage } from "./pages";
 
 
 const theme = createTheme({
@@ -17,13 +16,14 @@ function App() {
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/detail" element={<ReviewPage />} />
-            <Route path="/google" element={<GoogleReviewPage />} />
-            <Route path="/" element={<Homepage />} />
-          </Routes>
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/:id/admin/" element={<AdminPage />} />
+              <Route path="/:id/" element={<ClientPage />} />
+            </Routes>
+          </BrowserRouter>
+        </Provider>
       </ThemeProvider>
     </>
   );

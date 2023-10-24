@@ -1,2 +1,2 @@
-export * from "./coins";
-export * from "./review";
+export * from "./client";
+export * from "./admin";
