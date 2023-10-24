@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import store from "./redux/reducers";
-import { AdminPage, ClientPage } from "./pages";
+import { AdminPage, ClientPage, RegisterPage } from "./pages";
 
 
 const theme = createTheme({
@@ -21,6 +21,7 @@ function App() {
             <Routes>
               <Route path="/:id/admin/" element={<AdminPage />} />
               <Route path="/:id/" element={<ClientPage />} />
+              <Route path="/" element={<RegisterPage />} />
             </Routes>
           </BrowserRouter>
         </Provider>

@@ -29,7 +29,7 @@ export const AdminPage = () => {
     dispatch(receive(params.id));
     dispatch(receiveDetailReview(params.id));
     dispatch(receiveRecent(params.id, 10));
-  }, [dispatch])
+  }, [dispatch, params.id])
 
   useEffect(() => {
     setDetail(review_detail.map(val => ({
