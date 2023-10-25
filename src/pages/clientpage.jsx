@@ -64,11 +64,6 @@ export const ClientPage = () => {
   useEffect(() => {
 
   }, [])
-  
-  useEffect(() => {
-    if(company !== params.id)
-      navigate("/");
-  })
 
   return (
     
