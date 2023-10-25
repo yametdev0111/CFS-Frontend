@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react";
 import { detailReviewRating } from "../constants";
 import { modify, send } from "../redux/actions";
-import LogoIcon from "../assets/images/logo.png"
+// import LogoIcon from "../assets/images/logo.png"
 import {
   Homepage,
   GoogleReviewPage,
@@ -10,19 +10,23 @@ import {
   InfoPage
 } from './';
 import {
-  LinkItem,
-  DrawerHeader,
+  // LinkItem,
+  // DrawerHeader,
   PageContainer,
-  PageBox
+  PageBox,
+  Label
 } from "../components";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { exists } from "../redux/actions/user";
 
 export const ClientPage = () => {
   const params = useParams();
   const status = useSelector(state => state.status);
-  const company = useSelector(state => state.company);
-  const navigate = useNavigate();
+  // const company = useSelector(state => state.company);
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [exist, setExist] = useState(0);
 
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
@@ -62,17 +66,19 @@ export const ClientPage = () => {
   }
 
   useEffect(() => {
-
-  }, [])
+    exists(params.id, result => {
+      setExist(result + 1);
+    })
+  }, [params.id])
 
   return (
     
     <PageContainer>
       <PageBox>
-        <DrawerHeader sx={{ justifyContent: "center", mt: 1 }}>
+        {/* <DrawerHeader sx={{ justifyContent: "center", mt: 1 }}>
           <LinkItem to="/"><img src={LogoIcon} alt="Logo" /></LinkItem>
-        </DrawerHeader>
-        {(status === 0) &&
+        </DrawerHeader> */}
+        {(status === 0 && exist === 2) &&
           <Homepage
             rating={rating}
             setRating={setRating}
@@ -80,12 +86,12 @@ export const ClientPage = () => {
             setReview={setReview}
           />
         }
-        {(status === 1) &&
+        {(status === 1 && exist === 2) &&
           <GoogleReviewPage
             onSubmit={onSubmitReview}
           />
         }
-        {(status === 2) &&
+        {(status === 2 && exist === 2) &&
           <ReviewPage
             rating={drating}
             setRating={setDRating}
@@ -94,7 +100,7 @@ export const ClientPage = () => {
             onSubmit={onSubmitReview}
           />
         }
-        {(status === 3) &&
+        {(status === 3 && exist === 2) &&
           <InfoPage
             name={sign}
             setName={setSign}
@@ -102,6 +108,9 @@ export const ClientPage = () => {
             setEmail={setEmail}
             onSubmit={onSubmitInfo}
           />
+        }
+        {(exist === 1) &&
+          <Label text="Oops !\nCannot find page" />
         }
       </PageBox>
     </PageContainer>

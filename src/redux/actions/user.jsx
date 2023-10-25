@@ -9,7 +9,7 @@ export const SignIn = params => dispatch => {
     }
     else alert(response.data.data);
   })
-  .catch(error => console.log(error))
+  .catch(error => console.log(error));
 }
 
 export const SignUp = params => dispatch => {
@@ -21,5 +21,11 @@ export const SignUp = params => dispatch => {
     }
     else alert(response.data.data);
   })
-  .catch(error => console.log(error))
+  .catch(error => console.log(error));
+}
+
+export const exists = ( params, callback ) => {
+  axios.post("/user/exists", params)
+  .then(response => { callback(response.data.result); })
+  .catch(error => console.log(error));
 }

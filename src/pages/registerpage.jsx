@@ -49,7 +49,7 @@ export const RegisterPage = () => {
     if(company.length){
       navigate('/' + company + '/admin');
     }
-  }, [company])
+  }, [navigate, company])
 
   useEffect(() => {
     setState(false);
