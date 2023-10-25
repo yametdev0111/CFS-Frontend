@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { receive, receiveDetailReview, receiveRecent } from "../redux/actions";
 import './../App.css';
 import { series, title } from "../constants";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const valueFormatter = value => `${value===null?"0":value.toFixed(1)}%`;
 
@@ -16,6 +16,8 @@ export const AdminPage = () => {
     height: 200,
     marginLeft: 100
   };
+  const company = useSelector(state => state.company);
+  const navigate = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
 
@@ -30,6 +32,13 @@ export const AdminPage = () => {
     dispatch(receiveDetailReview(params.id));
     dispatch(receiveRecent(params.id, 10));
   }, [dispatch, params.id])
+
+  useEffect(() => {
+    if(company !== params.id){
+      console.log("Dismatch----------------->", company, params);
+      navigate("/");
+    }
+  })
 
   useEffect(() => {
     setDetail(review_detail.map(val => ({

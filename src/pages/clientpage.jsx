@@ -15,11 +15,13 @@ import {
   PageContainer,
   PageBox
 } from "../components";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const ClientPage = () => {
   const params = useParams();
   const status = useSelector(state => state.status);
+  const company = useSelector(state => state.company);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [rating, setRating] = useState(0);
@@ -62,6 +64,11 @@ export const ClientPage = () => {
   useEffect(() => {
 
   }, [])
+  
+  useEffect(() => {
+    if(company !== params.id)
+      navigate("/");
+  })
 
   return (
     

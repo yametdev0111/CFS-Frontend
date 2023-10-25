@@ -13,7 +13,6 @@ export const ClickButton = styled(Button)`
 
 export const SubmitButton = ( props ) => {
   const { onClick, children } = props;
-  console.log(children);
   return (
     <>
       <ClickButton

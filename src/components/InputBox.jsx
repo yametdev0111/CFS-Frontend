@@ -1,15 +1,22 @@
 import { TextField } from "@mui/material";
 
 export const InputBox = (props) => {
-  const {value, func, multiline, password} = props;
+  const {
+    value,
+    func,
+    multiline,
+    password,
+    placeholder,
+  } = props;
 
   return (
     <>
       <TextField
         id="outlined-multiline-static"
         label=""
-        placeholder="Write reviews or sugestions."
+        placeholder={placeholder ? placeholder : "Write reviews or sugestions."}
         multiline={multiline}
+        type={password ? "password" : "text"}
         rows={5}
         fullWidth
         defaultValue=""
