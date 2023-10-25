@@ -38,7 +38,7 @@ export const Homepage = ( props ) => {
 
       <Label text="Tell us about your experience. What did you like? What could we do better?" />
       
-      <InputBox value={review} func={setReview} multiline/>
+      <InputBox value={review} func={setReview} multiline placeholder="Additional comments or suggestions"/>
 
       <SubmitButton onClick={onSubmit}>
         Submit

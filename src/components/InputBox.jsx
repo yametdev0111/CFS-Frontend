@@ -14,7 +14,7 @@ export const InputBox = (props) => {
       <TextField
         id="outlined-multiline-static"
         label=""
-        placeholder={placeholder ? placeholder : "Write reviews or sugestions."}
+        placeholder={placeholder}
         multiline={multiline}
         type={password ? "password" : "text"}
         rows={5}
