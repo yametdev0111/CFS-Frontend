@@ -110,7 +110,7 @@ export const ClientPage = () => {
           />
         }
         {(exist === 1) &&
-          <Label text="Oops !\nCannot find page" />
+          <Label text="Oops ! Cannot find page" />
         }
       </PageBox>
     </PageContainer>

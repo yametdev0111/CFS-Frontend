@@ -25,7 +25,7 @@ export const SignUp = params => dispatch => {
 }
 
 export const exists = ( params, callback ) => {
-  axios.post("/user/exists", params)
+  axios.post("/user/exists", {company: params})
   .then(response => { callback(response.data.result); })
   .catch(error => console.log(error));
 }
