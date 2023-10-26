@@ -36,7 +36,7 @@ export const AdminPage = () => {
   useEffect(() => {
     if(company !== params.id){
       console.log("Dismatch----------------->", company, params);
-      navigate("/");
+      navigate("/admin");
     }
   })
 
