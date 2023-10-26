@@ -12,7 +12,7 @@ export const GoogleReviewPage = (props) => {
 
   return (
     <BoxContainer>
-      <Label text="We appreciate your feedback and 5-star rating! Our team aims to make our customers happy.🙂" />
+      <Label text="We appreciate your feedback and 5-star rating! Our team aims to make our customers happy. Thank you. 🙂" />
       <br />
       {hasGoogle && (
         <>
