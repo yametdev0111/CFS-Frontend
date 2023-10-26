@@ -7,19 +7,23 @@ import {
   Homepage,
   GoogleReviewPage,
   ReviewPage,
-  InfoPage
+  InfoPage,
+  ConfirmPage,
 } from './';
 import {
   // LinkItem,
   // DrawerHeader,
   PageContainer,
   PageBox,
-  Label
+  Label,
+  SubmitButton
 } from "../components";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { exists } from "../redux/actions/user";
 
 export const ClientPage = () => {
+  const navigate = useNavigate();
+  
   const params = useParams();
   const status = useSelector(state => state.status);
   // const company = useSelector(state => state.company);
@@ -37,6 +41,7 @@ export const ClientPage = () => {
   const [infoID, setInfoID] = useState("");
   const [sign, setSign] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const onSubmitReview = () => {
     send(
@@ -53,17 +58,28 @@ export const ClientPage = () => {
       }
     );
   }
-
+  
+  const onSubmitConfirm = () => {
+    dispatch({
+      type: "Status",
+      payload: 0
+    })
+  }
   const onSubmitInfo = () => {
     modify(
       {
         id: infoID,
         name: sign,
-        email: email
+        email: email,
+        phone: phone,
       },
-      () => { dispatch({type: "Status", payload: 0}) }
+      () => { dispatch({type: "Status", payload: 4}) }
     )
   }
+
+  useEffect(() => {
+    console.log(status);
+  }, [status])
 
   useEffect(() => {
     exists(params.id, result => {
@@ -106,11 +122,27 @@ export const ClientPage = () => {
             setName={setSign}
             email={email}
             setEmail={setEmail}
+            phone={phone}
+            setPhone={setPhone}
             onSubmit={onSubmitInfo}
           />
         }
+        {(status === 4 && exist === 2) &&
+          <ConfirmPage
+            onSubmit={onSubmitConfirm}
+          />
+        }
         {(exist === 1) &&
-          <Label text="Oops ! Cannot find page" />
+          <>
+            <Label text="Oops ! Cannot find page" />
+            <SubmitButton
+              onClick = { () => {
+                navigate("/");
+              } }
+            >
+              Go to homepage
+            </SubmitButton>
+          </>
         }
       </PageBox>
     </PageContainer>

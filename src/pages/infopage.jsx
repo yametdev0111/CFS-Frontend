@@ -6,7 +6,7 @@ import {
 } from "../components";
 
 export const InfoPage = ( props ) => {
-  const { name, setName, email, setEmail, onSubmit } = props;
+  const { name, setName, email, setEmail, phone, setPhone, onSubmit } = props;
 
   const onClick = () => {
     onSubmit();
@@ -22,6 +22,9 @@ export const InfoPage = ( props ) => {
 
       <Label text="Email" />
       <InputBox value={email} func={setEmail} />
+
+      <Label text="Phone" />
+      <InputBox value={phone} func={setPhone} />
 
       <SubmitButton onClick={onClick}>
         Submit

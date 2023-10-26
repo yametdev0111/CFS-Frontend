@@ -59,7 +59,7 @@ export const RegisterPage = () => {
     <PageContainer>
       <PageBox>
         <DrawerHeader sx={{ justifyContent: "center", mt: 1 }}>
-          <LinkItem to="/">
+          <LinkItem to="/admin">
             <img src={LogoIcon} alt="Logo" />
           </LinkItem>
         </DrawerHeader>
