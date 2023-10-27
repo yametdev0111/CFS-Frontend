@@ -14,7 +14,7 @@ const valueFormatter = value => `${value===null?"0":value.toFixed(1)}%`;
 export const AdminPage = () => {
   const chartSetting = {
     width: 400,
-    height: 200,
+    height: 300,
     marginLeft: 100
   };
   // const company = useSelector(state => state.company);
@@ -65,6 +65,7 @@ export const AdminPage = () => {
         height: "100vh",
       }}
     >
+    <div style={{margin: 0}}> 
       <h1>Feedback Dashboard</h1>
       <h2>Feedback Review Summary</h2>
       <p>Average ⭐ Stars:{average}</p>
@@ -92,7 +93,10 @@ export const AdminPage = () => {
       
       <BarChart
         series={detail}
-        yAxis={[{ scaleType: 'band', data: title }]}
+        yAxis={[{ 
+          scaleType: 'band', 
+          data: title,
+        }]}
         xAxis={[{
           label: 'Percentage (%)',
           min: 0,
@@ -101,7 +105,7 @@ export const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
-
+      
       <table className="cfstable">
         <thead className="cfsrow">
           <td className="cfscell">Stars</td>
@@ -112,12 +116,13 @@ export const AdminPage = () => {
         {recent.reverse().map(val =>
           <tr className="cfsrow">
             <td className="cfscell">{val.rating}</td>
-            <td className="cfscell">{val.review}</td>
+            <td className="cfscell">{val.review} <br/> {val.review_text}</td>
             <td className="cfscell">{val.createdAt.time}</td>
             <td className="cfscell">{val.createdAt.date}</td>
           </tr>
         )}
       </table>
+      </div>
     </Container>
   );
 };

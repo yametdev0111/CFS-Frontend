@@ -7,3 +7,4 @@ export * from "./BoxContainer";
 export * from "./InputBox";
 export * from "./PageContainer";
 export * from "./PageBox";
+export * from "./LabelSpace";

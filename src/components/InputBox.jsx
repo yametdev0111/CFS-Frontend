@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 
 export const InputBox = (props) => {
-  const { value, func, multiline, password, placeholder } = props;
+  const { value, func, multiline, password, placeholder, inputProps } = props;
 
   return (
     <>
@@ -12,6 +12,7 @@ export const InputBox = (props) => {
         multiline={multiline}
         type={password ? "password" : "text"}
         rows={5}
+        inputProps={{pattern: inputProps}}
         fullWidth
         defaultValue=""
         value={value}
