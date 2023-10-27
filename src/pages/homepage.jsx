@@ -26,7 +26,7 @@ export const Homepage = ( props ) => {
   return (
     <BoxContainer>
       <Label text="How was our service today?" lineHeight={0} />
-      <Label text="(Choose 1 to 5 stars.)" lineHeight={0} fontSize={15} fontWeight={500} />
+      <Label text="(choose 1 to 5 stars)" lineHeight={0} fontSize={15} fontWeight={500} />
       <Rating
         value={rating}
         size="large"

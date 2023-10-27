@@ -31,7 +31,7 @@ export const AdminPage = () => {
   useEffect(() => {
     dispatch(receive(params.id));
     dispatch(receiveDetailReview(params.id));
-    dispatch(receiveRecent(params.id, 10));
+    dispatch(receiveRecent(params.id, 0x7fff));
   }, [dispatch, params.id])
 
   useEffect(() => {
@@ -89,11 +89,13 @@ export const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
-      
-      <BarChart     
+      <div style={{marginRight: `calc(100vw)`, minWidth: 550}}>
+       <BarChart
+        width="400"
+        height={300}
         series={detail}
         yAxis={[{
-          position: "right",
+          
           scaleType: 'band', 
           data: title,
         }]}
@@ -103,8 +105,12 @@ export const AdminPage = () => {
           max: 100,
         }]}
         layout="horizontal"
-        {...chartSetting}
-      />
+        // {...chartSetting}
+      >
+      </BarChart>
+      </div>
+
+      
       
       <table className="cfstable">
         <thead className="cfsrow">
@@ -112,6 +118,7 @@ export const AdminPage = () => {
           <td className="cfscell">Comments</td>
           <td className="cfscell">Time</td>
           <td className="cfscell">Date</td>
+          <td className="cfscell">Contact Info</td>
         </thead>
         {recent.reverse().map(val =>
           <tr className="cfsrow">
@@ -119,6 +126,7 @@ export const AdminPage = () => {
             <td className="cfscell">{val.review} <br/> {val.review_text}</td>
             <td className="cfscell">{val.createdAt.time}</td>
             <td className="cfscell">{val.createdAt.date}</td>
+            <td className="cfscell">{val.name} <br/> {val.email} <br/> {val.phone}</td>
           </tr>
         )}
       </table>

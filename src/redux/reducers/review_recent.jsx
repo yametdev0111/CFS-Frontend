@@ -17,6 +17,11 @@ const getTimeAndDate = val => {
 
 const reducer = (state = initialState, action) => {
   if(action.type === "RecentReview"){
+    const sortedPayload = action.payload.sort((a, b) => {
+      const dateA = new Date(a.createdAt);
+      const dateB = new Date(b.createdAt);
+      return dateB - dateA;
+    });
     state = action.payload.map(val => ({
       ...val,
       createdAt: getTimeAndDate(val.createdAt)
