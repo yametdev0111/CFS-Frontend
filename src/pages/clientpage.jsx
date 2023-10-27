@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { detailReviewRating } from "../constants";
 import { modify, send } from "../redux/actions";
-// import LogoIcon from "../assets/images/logo.png"
 import {
   Homepage,
   GoogleReviewPage,
@@ -11,8 +10,6 @@ import {
   ConfirmPage,
 } from "./";
 import {
-  // LinkItem,
-  // DrawerHeader,
   PageContainer,
   PageBox,
   Label,
@@ -26,8 +23,6 @@ export const ClientPage = () => {
 
   const params = useParams();
   const status = useSelector((state) => state.status);
-  // const company = useSelector(state => state.company);
-  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [exist, setExist] = useState(0);
@@ -94,9 +89,6 @@ export const ClientPage = () => {
   return (
     <PageContainer>
       <PageBox>
-        {/* <DrawerHeader sx={{ justifyContent: "center", mt: 1 }}>
-          <LinkItem to="/"><img src={LogoIcon} alt="Logo" /></LinkItem>
-        </DrawerHeader> */}
         {status === 0 && exist === 2 && (
           <Homepage
             rating={rating}
