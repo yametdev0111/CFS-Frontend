@@ -13,8 +13,7 @@ export const InfoPage = ( props ) => {
 
   return (
     <BoxContainer>
-      <Label text="Please leave your contact information for the manager to reach you.
-" />
+      <Label text="Please leave your contact information for the manager to reach you." />
       <Label text="" />
 
       <Label text="Name" />

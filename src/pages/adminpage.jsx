@@ -89,7 +89,7 @@ export const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
-      <div style={{marginRight: `calc(50vw)`, minWidth: 550}}>
+      <div style={{marginRight: `calc(100vw)`, minWidth: 550}}>
        <BarChart
         width="400"
         height={300}
@@ -120,7 +120,7 @@ export const AdminPage = () => {
           <td className="cfscell">Date</td>
           <td className="cfscell">Contact Info</td>
         </thead>
-        {recent.map(val =>
+        {recent.reverse().map(val =>
           <tr className="cfsrow">
             <td className="cfscell">{val.rating}</td>
             <td className="cfscell">{val.review} <br/> {val.review_text}</td>
