@@ -1,23 +1,30 @@
 import { TextField } from "@mui/material";
+import { useState } from "react";
 
 export const InputBox = (props) => {
-  const { value, func, multiline, password, placeholder, inputProps } = props;
+  const [error, setError] = useState(false);
+  const { value, func, regexp, multiline, type, placeholder } = props;
+
+  const filterValue = (str) => {
+    if(regexp) setError(!regexp.test(str));
+  }
 
   return (
     <>
       <TextField
-        id="outlined-multiline-static"
         label=""
         placeholder={placeholder}
         multiline={multiline}
-        type={password ? "password" : "text"}
+        type={type}
         rows={5}
-        inputProps={{pattern: inputProps}}
+        required={true}
+        error={error}
         fullWidth
         defaultValue=""
         value={value}
         color="primary"
         onChange={(event) => {
+          filterValue(event.target.value);
           func(event.target.value);
         }}
       />

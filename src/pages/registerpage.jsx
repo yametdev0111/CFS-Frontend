@@ -66,9 +66,9 @@ export const RegisterPage = () => {
           <Label text="Company Name" />
           <InputBox value={name} func={setName} />
           <Label text="Email" />
-          <InputBox value={email} func={setEmail} />
+          <InputBox value={email} func={setEmail} type="email" />
           <Label text="Password" />
-          <InputBox value={pass} func={setPass} password />
+          <InputBox value={pass} func={setPass} type="password" />
           {state === true && (
             <>
               <Label text="Password Confirm" />
