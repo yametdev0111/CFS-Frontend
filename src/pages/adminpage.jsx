@@ -14,8 +14,8 @@ const valueFormatter = value => `${value===null?"0":value.toFixed(1)}%`;
 
 export const AdminPage = () => {
   const chartSetting = {
-    width: 400,
-    height: 300,
+    width: 350,
+    height: 270,
   };
   // const company = useSelector(state => state.company);
   // const navigate = useNavigate();
@@ -89,10 +89,10 @@ export const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
-      <div style={{marginRight: `calc(100vw)`, minWidth: 550}}>
+      <div style={{marginRight: `calc(100vw)`, minWidth: 500}}>
        <BarChart
-        width="400"
-        height={300}
+        width="350"
+        height={270}
         series={detail}
         yAxis={[{
           
