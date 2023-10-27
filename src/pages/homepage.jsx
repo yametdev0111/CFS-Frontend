@@ -2,7 +2,6 @@ import Rating from '@mui/material/Rating';
 import {
   InputBox,
   Label,
-  LabelSpace,
   SubmitButton,
   BoxContainer,
 } from "../components";
@@ -26,8 +25,8 @@ export const Homepage = ( props ) => {
 
   return (
     <BoxContainer>
-      <LabelSpace text="How was our service today?"/>
-      <LabelSpace text="Choose 1 to 5 stars."/>
+      <Label text="How was our service today?" lineHeight={0} />
+      <Label text="(Choose 1 to 5 stars.)" lineHeight={0} fontSize={15} fontWeight={500} />
       <Rating
         value={rating}
         size="large"

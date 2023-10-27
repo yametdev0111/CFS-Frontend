@@ -12,7 +12,8 @@ export const ConfirmPage = ( props ) => {
   return (
     <BoxContainer>
       <Label text="Successed! 🙂" />
-      <Label text="We appreciate your feedback and 5-star rating! Our team aims to make our customers happy. Thank you. 🙂" />
+      <Label text="Our team aims to make our customers happy. 
+        Thank you for your feedback.🙂" />
 
       <SubmitButton onClick={onClick}>
       Confirm

@@ -7,6 +7,7 @@ import { receive, receiveDetailReview, receiveRecent } from "../redux/actions";
 import './../App.css';
 import { series, title } from "../constants";
 import { useParams } from "react-router-dom";
+// import { DEFAULT_X_AXIS_KEY, DEFAULT_Y_AXIS_KEY } from '@mui/x-charts/constants';
 // import { exists } from "../redux/actions/user";
 
 const valueFormatter = value => `${value===null?"0":value.toFixed(1)}%`;
@@ -15,7 +16,6 @@ export const AdminPage = () => {
   const chartSetting = {
     width: 400,
     height: 300,
-    marginLeft: 100
   };
   // const company = useSelector(state => state.company);
   // const navigate = useNavigate();
@@ -65,7 +65,6 @@ export const AdminPage = () => {
         height: "100vh",
       }}
     >
-    <div style={{margin: 0}}> 
       <h1>Feedback Dashboard</h1>
       <h2>Feedback Review Summary</h2>
       <p>Average ⭐ Stars:{average}</p>
@@ -91,9 +90,10 @@ export const AdminPage = () => {
         {...chartSetting}
       />
       
-      <BarChart
+      <BarChart     
         series={detail}
-        yAxis={[{ 
+        yAxis={[{
+          position: "right",
           scaleType: 'band', 
           data: title,
         }]}
@@ -122,7 +122,6 @@ export const AdminPage = () => {
           </tr>
         )}
       </table>
-      </div>
     </Container>
   );
 };
