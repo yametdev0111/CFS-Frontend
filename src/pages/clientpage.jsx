@@ -89,7 +89,7 @@ export const ClientPage = () => {
   return (
     <PageContainer>
       <PageBox>
-        {status === 0 && exist === 2 && (
+        {status === 0 && (
           <Homepage
             rating={rating}
             setRating={setRating}
@@ -97,10 +97,10 @@ export const ClientPage = () => {
             setReview={setReview}
           />
         )}
-        {status === 1 && exist === 2 && (
+        {status === 1 && (
           <GoogleReviewPage hasGoogle={google} onSubmit={onSubmitReview} />
         )}
-        {status === 2 && exist === 2 && (
+        {status === 2 && (
           <ReviewPage
             rating={drating}
             setRating={setDRating}
@@ -109,7 +109,7 @@ export const ClientPage = () => {
             onSubmit={onSubmitReview}
           />
         )}
-        {status === 3 && exist === 2 && (
+        {status === 3 && (
           <InfoPage
             name={sign}
             setName={setSign}
@@ -120,10 +120,10 @@ export const ClientPage = () => {
             onSubmit={onSubmitInfo}
           />
         )}
-        {status === 4 && exist === 2 && (
+        {status === 4 && (
           <ConfirmPage onSubmit={onSubmitConfirm} />
         )}
-        {exist === 1 && (
+        {/* {exist === 1 && (
           <>
             <Label text="Oops ! Cannot find page" />
             <SubmitButton
@@ -134,7 +134,7 @@ export const ClientPage = () => {
               Go to homepage
             </SubmitButton>
           </>
-        )}
+        )} */}
       </PageBox>
     </PageContainer>
   );

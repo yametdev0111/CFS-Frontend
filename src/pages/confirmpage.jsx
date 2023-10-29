@@ -11,13 +11,7 @@ export const ConfirmPage = ( props ) => {
   }
   return (
     <BoxContainer>
-      <Label text="Successed! 🙂" />
-      <Label text="Our team aims to make our customers happy. 
-        Thank you for your feedback.🙂" />
-
-      <SubmitButton onClick={onClick}>
-      Confirm
-      </SubmitButton>
+      <Label text="We received your feedback. Thank you! 🙂" />
     </BoxContainer>
   );
 };

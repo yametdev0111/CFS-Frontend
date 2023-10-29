@@ -7,8 +7,6 @@ import { receive, receiveDetailReview, receiveRecent } from "../redux/actions";
 import './../App.css';
 import { series, title } from "../constants";
 import { useParams } from "react-router-dom";
-// import { DEFAULT_X_AXIS_KEY, DEFAULT_Y_AXIS_KEY } from '@mui/x-charts/constants';
-// import { exists } from "../redux/actions/user";
 
 const valueFormatter = value => `${value===null?"0":value.toFixed(1)}%`;
 
@@ -56,7 +54,7 @@ export const AdminPage = () => {
     } )
     setAverage(sum.toFixed(1));
   }, [review_normal])
-
+  
   return (
     <Container
       maxWidth={false}
@@ -67,7 +65,7 @@ export const AdminPage = () => {
     >
       <h1>Feedback Dashboard</h1>
       <h2>Feedback Review Summary</h2>
-      <p>Average ⭐ Stars:{average}</p>
+      <p>Average ⭐ Stars:&nbsp;{average}</p>
       <p>Total Reviews: {recent.length}</p>
       <BarChart
         dataset={review_normal}
@@ -77,7 +75,7 @@ export const AdminPage = () => {
         } ]}
         series={[ {
           dataKey: 'percentage',
-          label: '⭐',
+          label:  '⭐',
           color:"#D9D9D9",
           valueFormatter
         } ]}
@@ -89,6 +87,7 @@ export const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
+      
       <div style={{marginRight: `calc(100vw)`, minWidth: 500}}>
        <BarChart
         width="350"

@@ -13,7 +13,7 @@ export const Homepage = ( props ) => {
 
   const onSubmit = () => {
     if(!rating){
-      alert("Please rate any score");
+      alert("Please rate any services.");
       return;
     }
     // send({ rating: rating, review: review })
