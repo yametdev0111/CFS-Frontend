@@ -21,7 +21,7 @@ export const ReviewPage = ( props ) => {
     ) {
       onSubmit();
     } else {
-      alert("Please rate the service");
+      alert("Please rate the services.");
     }
   }
 

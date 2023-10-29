@@ -11,14 +11,23 @@ const StyledRating = styled( Rating )(({ theme }) => ({
 }));
 
 const customIcons = {
+  // 1: {
+  //   icon: <SentimentVeryDissatisfiedIcon sx={{color: "#FFC000"}} />
+  // },
+  // 2: {
+  //   icon: <SentimentSatisfiedIcon sx={{color: "#FFC000"}} />
+  // },
+  // 3: {
+  //   icon: <SentimentSatisfiedAltIcon sx={{color: "#FFC000"}} />
+  // },
   1: {
-    icon: <SentimentVeryDissatisfiedIcon sx={{color: "#FFC000"}} />
+    icon: <div style={{fontSize: 18}}>🙁</div> 
   },
   2: {
-    icon: <SentimentSatisfiedIcon sx={{color: "#FFC000"}} />
+    icon: <div style={{fontSize: 18}}>😐</div>
   },
   3: {
-    icon: <SentimentSatisfiedAltIcon sx={{color: "#FFC000"}} />
+    icon: <div style={{fontSize: 18}}>🙂</div> 
   },
 };
 

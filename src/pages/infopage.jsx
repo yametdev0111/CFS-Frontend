@@ -1,5 +1,6 @@
 import {
   InputBox,
+  InputBoxPhone,
   Label,
   SubmitButton,
   BoxContainer,
@@ -23,7 +24,7 @@ export const InfoPage = ( props ) => {
       <InputBox value={email} func={setEmail} regexp={/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/} />
 
       <Label text="Phone" />
-      <InputBox value={phone} func={setPhone} regexp={/^[\+\-\(\) \d]{10,}$/} />
+      <InputBoxPhone value={phone} func={setPhone} regexp={/^[\+\-\(\) \d]{10,}$/} />
 
       <SubmitButton onClick={onClick}>
         Submit
