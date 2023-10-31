@@ -25,7 +25,7 @@ export const Homepage = ( props ) => {
 
   return (
     <BoxContainer>
-      <img src={logo} style={{width: '100%'}} alt="logo" />
+      {logo !== '' && <img src={logo} style={{width: '100%'}} alt="logo" />}
       <Label text="How was our service today?" lineHeight={0} />
       <Label text="(choose 1 to 5 stars)" lineHeight={0} fontSize={15} fontWeight={500} />
       <Rating
