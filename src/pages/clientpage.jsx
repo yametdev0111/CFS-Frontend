@@ -111,7 +111,7 @@ export const ClientPage = () => {
           />
         )}
         {status === 1 && exist === 2 && (
-          <GoogleReviewPage hasGoogle={google} onSubmit={onSubmitReview} />
+          <GoogleReviewPage hasGoogle={google} button={button} onSubmit={onSubmitReview} />
         )}
         {status === 2 && exist === 2 && (
           <ReviewPage
@@ -120,6 +120,7 @@ export const ClientPage = () => {
             review={dreview}
             setReview={setDReview}
             onSubmit={onSubmitReview}
+            button={button}
           />
         )}
         {status === 3 && exist === 2 && (
@@ -131,6 +132,7 @@ export const ClientPage = () => {
             phone={phone}
             setPhone={setPhone}
             onSubmit={onSubmitInfo}
+            button={button}
           />
         )}
         {status === 4 && exist === 2 && (

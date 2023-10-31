@@ -7,7 +7,7 @@ import {
 } from "../components";
 
 export const InfoPage = ( props ) => {
-  const { name, setName, email, setEmail, phone, setPhone, onSubmit } = props;
+  const { name, setName, email, setEmail, phone, setPhone, onSubmit, button } = props;
   const onClick = () => {
     onSubmit();
   }
@@ -26,7 +26,7 @@ export const InfoPage = ( props ) => {
       <Label text="Phone" />
       <InputBoxPhone value={phone} func={setPhone} regexp={/^[\+\-\(\) \d]{10,}$/} />
 
-      <SubmitButton onClick={onClick}>
+      <SubmitButton onClick={onClick} button={button}>
         DONE
       </SubmitButton>
     </BoxContainer>

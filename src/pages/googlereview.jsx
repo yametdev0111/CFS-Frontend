@@ -1,11 +1,11 @@
 import { Label, SubmitButton, BoxContainer } from "../components";
 
 export const GoogleReviewPage = (props) => {
-  const { onSubmit, hasGoogle } = props;
+  const { onSubmit, hasGoogle, button } = props;
 
   const onClick = () => {
     window.open(
-      "http://search.google.com/local/writereview?placeid=ChIJQU8OXXDYQIYRY7y5o327fiA"
+      hasGoogle
     );
     onSubmit();
   };
@@ -17,7 +17,7 @@ export const GoogleReviewPage = (props) => {
       {hasGoogle && (
         <>
           <Label text="Please also leave a public review on Google, so everyone can hear about what you liked.👇" />
-          <SubmitButton onClick={onClick}>Review on Google</SubmitButton>
+          <SubmitButton onClick={onClick} button={button}>Review on Google</SubmitButton>
         </>
       )}
     </BoxContainer>

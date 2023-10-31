@@ -4,32 +4,33 @@ import { Box, Rating } from "@mui/material";
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
-import SentimentDissatisfiedTwoToneIcon from '@mui/icons-material/SentimentDissatisfiedTwoTone';
 
-import SentimentSatisfiedTwoToneIcon from '@mui/icons-material/SentimentSatisfiedTwoTone';
-import SentimentSatisfiedAltTwoToneIcon from '@mui/icons-material/SentimentSatisfiedAltTwoTone';
 const StyledRating = styled(Rating)(({ theme }) => ({
   '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
     color: theme.palette.action.disabled,
   },
   '& .MuiRating-iconFilled .MuiSvgIcon-root': {
-    color: "#FFC000"
+    color: theme.palette.action.disabled,
+    borderRadius: "50%",
+    backgroundColor: '#FFC000'
+    
   },
-
   
 }));
+
 const customIcons = {
   1: {
-    icon: <SentimentVeryDissatisfiedIcon sx={{ color: "#FFC000" }} />
+    icon: <SentimentVeryDissatisfiedIcon />,
   },
   2: {
-    icon: <SentimentSatisfiedIcon sx={{ color: "#FFC000" }} />
+    icon: <SentimentSatisfiedIcon />,
   },
   3: {
-    icon: <SentimentSatisfiedAltIcon sx={{ color: "#FFC000" }} />
+    icon: <SentimentSatisfiedAltIcon />,
   },
-
 };
+let number;
+
 
 
 function IconContainer(props) {
@@ -51,6 +52,7 @@ export const FaceRating = (props) => {
         <StyledRating
           value={value[rkey]}
           onChange={(event, newValue) => {
+            
             func({
               ...value,
               [rkey]: newValue || 0
