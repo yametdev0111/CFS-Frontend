@@ -9,7 +9,7 @@ import {
 } from "../components";
 
 export const ReviewPage = ( props ) => {
-  const { rating, setRating, review, setReview, onSubmit } = props;
+  const { rating, setRating, review, setReview, onSubmit, button} = props;
 
   const onClick = () => {
     if(
@@ -41,7 +41,7 @@ export const ReviewPage = ( props ) => {
 
       <InputBox value={review} func={setReview} multiline placeholder="Additional comments or suggestions"/>
 
-      <SubmitButton onClick={onClick}>
+      <SubmitButton onClick={onClick} button={button} >
         Submit
       </SubmitButton>
     </BoxContainer>

@@ -60,7 +60,6 @@ export const AdminPage = () => {
       maxWidth={false}
       sx={{
         alignItems: "center",
-        height: "100vh",
       }}
     >
       <h1>Feedback Dashboard</h1>
@@ -110,25 +109,27 @@ export const AdminPage = () => {
       </div>
 
       
+      <div>
+        <table className="cfstable">
+          <thead className="cfsrow">
+            <td className="cfscell">Stars</td>
+            <td className="cfscell">Comments</td>
+            <td className="cfscell">Time</td>
+            <td className="cfscell">Date</td>
+            <td className="cfscell">Contact Info</td>
+          </thead>
+          {recent.reverse().map(val =>
+            <tr className="cfsrow">
+              <td className="cfscell">{val.rating}</td>
+              <td className="cfscell">{val.review} <br/> {val.review_text}</td>
+              <td className="cfscell">{val.createdAt.time}</td>
+              <td className="cfscell">{val.createdAt.date}</td>
+              <td className="cfscell">{val.name} <br/> {val.email} <br/> {val.phone}</td>
+            </tr>
+          )}
+        </table>
+      </div>
       
-      <table className="cfstable">
-        <thead className="cfsrow">
-          <td className="cfscell">Stars</td>
-          <td className="cfscell">Comments</td>
-          <td className="cfscell">Time</td>
-          <td className="cfscell">Date</td>
-          <td className="cfscell">Contact Info</td>
-        </thead>
-        {recent.reverse().map(val =>
-          <tr className="cfsrow">
-            <td className="cfscell">{val.rating}</td>
-            <td className="cfscell">{val.review} <br/> {val.review_text}</td>
-            <td className="cfscell">{val.createdAt.time}</td>
-            <td className="cfscell">{val.createdAt.date}</td>
-            <td className="cfscell">{val.name} <br/> {val.email} <br/> {val.phone}</td>
-          </tr>
-        )}
-      </table>
     </Container>
   );
 };
