@@ -27,6 +27,10 @@ export const ClientPage = () => {
 
   const [exist, setExist] = useState(0);
   const [google, setGoogle] = useState("");
+  const [button, setButton] = useState("");
+  const [logo, setLogo] = useState("");
+  const [star, setStar] = useState("");
+  const [street, setStreet] = useState(""); 
 
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
@@ -82,25 +86,34 @@ export const ClientPage = () => {
     exists(
       params.id,
       (result) => setExist(result + 1),
-      (result) => setGoogle(result)
+      (result) => {
+        setGoogle(result.google);
+        setLogo(result.logo);
+        setStar(result.star);
+        setButton(result.button);
+        setStreet(result.street);
+      }
     );
   }, [params.id]);
 
   return (
     <PageContainer>
       <PageBox>
-        {status === 0 && (
+        {status === 0 && exist === 2 && (
           <Homepage
             rating={rating}
             setRating={setRating}
             review={review}
             setReview={setReview}
+            logo={logo}
+            star={star}
+            button={button}
           />
         )}
-        {status === 1 && (
+        {status === 1 && exist === 2 && (
           <GoogleReviewPage hasGoogle={google} onSubmit={onSubmitReview} />
         )}
-        {status === 2 && (
+        {status === 2 && exist === 2 && (
           <ReviewPage
             rating={drating}
             setRating={setDRating}
@@ -109,7 +122,7 @@ export const ClientPage = () => {
             onSubmit={onSubmitReview}
           />
         )}
-        {status === 3 && (
+        {status === 3 && exist === 2 && (
           <InfoPage
             name={sign}
             setName={setSign}
@@ -120,10 +133,10 @@ export const ClientPage = () => {
             onSubmit={onSubmitInfo}
           />
         )}
-        {status === 4 && (
+        {status === 4 && exist === 2 && (
           <ConfirmPage onSubmit={onSubmitConfirm} />
         )}
-        {/* {exist === 1 && (
+        {exist === 1 && (
           <>
             <Label text="Oops ! Cannot find page" />
             <SubmitButton
@@ -134,7 +147,7 @@ export const ClientPage = () => {
               Go to homepage
             </SubmitButton>
           </>
-        )} */}
+        )}
       </PageBox>
     </PageContainer>
   );

@@ -14,7 +14,7 @@ export const InfoPage = ( props ) => {
 
   return (
     <BoxContainer>
-      <Label text="Please leave your contact information for the manager to reach you." />
+      <Label text="If you want the manager to follow up with you, please leave your contact information. (optional)" />
       <Label text="" />
 
       <Label text="Name" />
@@ -27,7 +27,7 @@ export const InfoPage = ( props ) => {
       <InputBoxPhone value={phone} func={setPhone} regexp={/^[\+\-\(\) \d]{10,}$/} />
 
       <SubmitButton onClick={onClick}>
-        Submit
+        DONE
       </SubmitButton>
     </BoxContainer>
   );

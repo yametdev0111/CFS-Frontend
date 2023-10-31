@@ -11,7 +11,7 @@ export const ConfirmPage = ( props ) => {
   }
   return (
     <BoxContainer>
-      <Label text="We received your feedback. Thank you! 🙂" />
+      <Label text="We received your feedback. Thanks! 🙂" />
     </BoxContainer>
   );
 };
