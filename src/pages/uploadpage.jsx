@@ -33,11 +33,17 @@ export const UploadPage = () => {
         button: button,
         manager: [manager1, manager2, manager3, manager4],
         googleId: 'http://search.google.com/local/writereview?placeid=' + goolgeId,
+        logo: logo,
       }
     );
   };
-  const onUpload = () => {
-      toast.current.show({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setLogo(reader.result);
+    };
   };
   useEffect(() => {
     console.log(params.id)
@@ -45,8 +51,8 @@ export const UploadPage = () => {
       params.id,
       (result) => setExist(exsit + 1),
       (result) => {
-        console.log(result)
         setLogo(result.logo); 
+        console.log(result.logo)
         setStar(result.star);
         setButton(result.button);
         setGoogleId(result.google.split('=')[1]);
@@ -57,14 +63,15 @@ export const UploadPage = () => {
       }
     );
   }, [params.id]);
-  
+
   return (
     <BoxContainer>
       <br />
       {logo !== undefined && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
-
+      <input type="file" accept="image/*" onChange={handleImageUpload} />
+      
       <Label text="Star Color" />
       <ColorPicker 
         value={star}
