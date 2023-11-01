@@ -25,7 +25,7 @@ export const Homepage = ( props ) => {
   return (
     <BoxContainer>
       <br />
-      {logo !== undefined && <img src={logo} style={{width: '65%'}} alt="logo" />}
+      {logo !== '' && <img src={logo} style={{width: '65%'}} alt="logo" />}
       <br />
       <br />
       <Label text="How was our service today?" lineHeight={0} />
