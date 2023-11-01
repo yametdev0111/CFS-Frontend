@@ -45,7 +45,8 @@ export const AdminPage = () => {
   }, [params.id]);
   useEffect(() => {
     if(company !== params.id){
-      navigate("/admin");
+      const id = params.id;
+      navigate(`/admin?id=${id}`);
     }
   })
 
@@ -72,7 +73,7 @@ export const AdminPage = () => {
         alignItems: "center",
       }}
     >
-      {logo !== undefined && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== "" && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <h1>Feedback Dashboard</h1>
       <h2>Feedback Review Summary</h2>
       <p>Average ⭐ Stars:&nbsp;{average}</p>
