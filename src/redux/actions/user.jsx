@@ -28,6 +28,7 @@ export const exists = (params, callback1, callback2) => {
   axios
     .post("/company/exists", { company: params })
     .then((response) => {
+      console.log(response)
       callback1(response.data.result);
       callback2(response.data.data);
     })

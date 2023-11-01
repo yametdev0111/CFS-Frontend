@@ -15,7 +15,7 @@ import {
   Label,
   SubmitButton,
 } from "../components";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { exists } from "../redux/actions/user";
 
 export const ClientPage = () => {
@@ -42,6 +42,8 @@ export const ClientPage = () => {
   const [sign, setSign] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  const location = useLocation();
 
   const onSubmitReview = () => {
     send(
@@ -111,10 +113,16 @@ export const ClientPage = () => {
           />
         )}
         {status === 1 && exist === 2 && (
-          <GoogleReviewPage hasGoogle={google} button={button} onSubmit={onSubmitReview} />
+          <GoogleReviewPage 
+            hasGoogle={google} 
+            button={button} 
+            logo={logo}
+            onSubmit={onSubmitReview}
+          />
         )}
         {status === 2 && exist === 2 && (
           <ReviewPage
+            logo={logo}
             rating={drating}
             setRating={setDRating}
             review={dreview}
@@ -125,6 +133,7 @@ export const ClientPage = () => {
         )}
         {status === 3 && exist === 2 && (
           <InfoPage
+            logo={logo}
             name={sign}
             setName={setSign}
             email={email}
@@ -136,18 +145,11 @@ export const ClientPage = () => {
           />
         )}
         {status === 4 && exist === 2 && (
-          <ConfirmPage onSubmit={onSubmitConfirm} />
+          <ConfirmPage onSubmit={onSubmitConfirm} logo={logo} />
         )}
         {exist === 1 && (
           <>
-            <Label text="Oops ! Cannot find page" />
-            <SubmitButton
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Go to homepage
-            </SubmitButton>
+            {navigate(location.pathname+"/admin")}
           </>
         )}
       </PageBox>

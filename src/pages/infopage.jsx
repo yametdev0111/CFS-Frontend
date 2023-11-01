@@ -7,13 +7,17 @@ import {
 } from "../components";
 
 export const InfoPage = ( props ) => {
-  const { name, setName, email, setEmail, phone, setPhone, onSubmit, button } = props;
+  const { name, setName, email, setEmail, phone, setPhone, onSubmit, button, logo } = props;
   const onClick = () => {
     onSubmit();
   }
 
   return (
     <BoxContainer>
+      <br />
+      {logo !== '' && <img src={logo} style={{width: '65%'}} alt="logo" />}
+      <br />
+      <br />
       <Label text="If you want the manager to follow up with you, please leave your contact information. (optional)" />
       <Label text="" />
 

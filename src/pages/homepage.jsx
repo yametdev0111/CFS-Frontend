@@ -16,7 +16,6 @@ export const Homepage = ( props ) => {
       alert("Please rate the services.");
       return;
     }
-    // send({ rating: rating, review: review })
     dispatch({
       type: "Status",
       payload: ( rating === 5 ? 1 : 2 ),
@@ -25,7 +24,10 @@ export const Homepage = ( props ) => {
 
   return (
     <BoxContainer>
-      {logo !== '' && <img src={logo} style={{width: '100%'}} alt="logo" />}
+      <br />
+      {logo !== '' && <img src={logo} style={{width: '65%'}} alt="logo" />}
+      <br />
+      <br />
       <Label text="How was our service today?" lineHeight={0} />
       <Label text="(choose 1 to 5 stars)" lineHeight={0} fontSize={15} fontWeight={500} />
       <Rating
@@ -36,7 +38,8 @@ export const Homepage = ( props ) => {
         }}
         style={{ color: star, fontSize: 44 }}
       />
-
+      <br />
+      <br />
       <Label text="Tell us about your experience. What did you like? What could we do better?" />
       
       <InputBox value={review} func={setReview} multiline placeholder="Additional comments or suggestions"/>

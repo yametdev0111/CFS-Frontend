@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export const RegisterPage = () => {
-  const company = useSelector((state) => state.company);
+  const company = useSelector((state) => state.company.name);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -30,6 +30,7 @@ export const RegisterPage = () => {
       name: name,
       email: email,
       pass: pass,
+      isPaid: false,
     };
   };
   const onSignin = () => {
@@ -45,8 +46,10 @@ export const RegisterPage = () => {
   };
 
   useEffect(() => {
-    if (company.length) {
-      navigate("/" + company + "/admin");
+
+    if (typeof company !== 'undefined' && company.length) {
+
+      navigate("/" + company + "/dashboard");
     }
   }, [navigate, company]);
 
@@ -72,7 +75,7 @@ export const RegisterPage = () => {
           {state === true && (
             <>
               <Label text="Password Confirm" />
-              <InputBox value={repass} func={setRePass} password />
+              <InputBox value={repass} func={setRePass} type="password" />
             </>
           )}
           {state === false && (

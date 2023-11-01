@@ -13,7 +13,6 @@ const getTimeAndDate = val => {
 }
 const convertLocal = val => {
   const localDate = new Date(val).toLocaleString();
-  console.log(localDate)
   return localDate
 }
 const reducer = (state = initialState, action) => {
