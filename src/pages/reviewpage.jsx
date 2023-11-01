@@ -9,7 +9,7 @@ import {
 } from "../components";
 
 export const ReviewPage = ( props ) => {
-  const { rating, setRating, review, setReview, onSubmit, button} = props;
+  const { rating, setRating, review, setReview, onSubmit, button, logo} = props;
 
   const onClick = () => {
     if(
@@ -27,6 +27,10 @@ export const ReviewPage = ( props ) => {
 
   return (
     <BoxContainer>
+      <br />
+      {logo !== undefined && <img src={logo} style={{width: '65%'}} alt="logo" />}
+      <br />
+      <br />
       <Label text="We will use your valuable feedback to improve our service and make the overall experience better." />
       <Label text="Please show us how you feel about each part of our service by selecting an expression:" />
       
