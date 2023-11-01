@@ -12,8 +12,6 @@ import {
 import {
   PageContainer,
   PageBox,
-  Label,
-  SubmitButton,
 } from "../components";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { exists } from "../redux/actions/user";
