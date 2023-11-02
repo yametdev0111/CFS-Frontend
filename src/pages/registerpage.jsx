@@ -12,14 +12,17 @@ import {
 } from "../components";
 import { SignIn, SignUp } from "../redux/actions/user";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const RegisterPage = () => {
   const company = useSelector((state) => state.company.name);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [state, setState] = useState(false);
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get("id");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -27,7 +30,7 @@ export const RegisterPage = () => {
 
   const getValue = () => {
     return {
-      name: name,
+      name: id,
       email: email,
       pass: pass,
       isPaid: false,
@@ -66,8 +69,8 @@ export const RegisterPage = () => {
           </LinkItem>
         </DrawerHeader>
         <BoxContainer>
-          <Label text="Company Name" />
-          <InputBox value={name} func={setName} />
+          {/* <Label text="Company Name" />
+          <InputBox value={name} func={setName} /> */}
           <Label text="Email" />
           <InputBox value={email} func={setEmail} type="email" />
           <Label text="Password" />

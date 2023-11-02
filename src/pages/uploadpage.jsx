@@ -67,7 +67,7 @@ export const UploadPage = () => {
   return (
     <BoxContainer>
       <br />
-      {logo !== undefined && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== '' && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <input type="file" accept="image/*" onChange={handleImageUpload} />
@@ -99,7 +99,7 @@ export const UploadPage = () => {
       <Label text="Google review placeID" />
       <InputBox value={goolgeId} func={setGoogleId} />
       <SubmitButton button={button} onClick={onSubmitUpload}>
-        Upload
+        Chagne
       </SubmitButton>
     </BoxContainer>
   );
