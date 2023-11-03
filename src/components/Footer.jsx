@@ -12,12 +12,13 @@ export const Footer = (props) => {
               ? theme.palette.grey[0]
               : theme.palette.grey[0],
           p: 0,
-          position: "fixed",
+          // position: "fixed",
           bottom: 0,
           height: 50,
           width: "100%",
           zIndex: 1023,
-          display: "flex"
+          display: "flex",
+          marginTop: '20px'
         }}
         component="footer"
       >

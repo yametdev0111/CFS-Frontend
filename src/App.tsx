@@ -15,7 +15,6 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <div className="App-main">
         <ThemeProvider theme={theme}>
           <Provider store={store}>
             <BrowserRouter>
@@ -29,7 +28,7 @@ function App() {
             </BrowserRouter>
           </Provider>
         </ThemeProvider>
-      </div>
+
       <Footer />
     </>
   );

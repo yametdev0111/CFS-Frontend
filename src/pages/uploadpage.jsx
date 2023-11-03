@@ -67,7 +67,7 @@ export const UploadPage = () => {
   return (
     <BoxContainer>
       <br />
-      {logo !== '' && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== undefined || ""  && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <input type="file" accept="image/*" onChange={handleImageUpload} />

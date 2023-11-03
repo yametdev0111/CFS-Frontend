@@ -15,7 +15,7 @@ export const InfoPage = ( props ) => {
   return (
     <BoxContainer>
       <br />
-      {logo !== '' && <img src={logo} style={{width: '65%'}} alt="logo" />}
+      {logo !== undefined || ""  && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <Label text="If you want the manager to follow up with you, please leave your contact information. (optional)" />
