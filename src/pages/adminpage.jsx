@@ -43,12 +43,12 @@ export const AdminPage = () => {
       }
     );
   }, [params.id]);
-  useEffect(() => {
-    if(company !== params.id){
-      const id = params.id;
-      navigate(`/admin?id=${id}`);
-    }
-  })
+  // useEffect(() => {
+  //   if(company !== params.id){
+  //     const id = params.id;
+  //     navigate(`/admin?id=${id}`);
+  //   }
+  // })
 
   useEffect(() => {
     setDetail(review_detail.map(val => ({
@@ -73,9 +73,9 @@ export const AdminPage = () => {
         alignItems: "center",
       }}
     >
-      {logo !== "" && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== null && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <h1>Feedback Dashboard</h1>
-      <h2>Feedback Review Summary</h2>
+      <h2>Results Summary:</h2>
       <p>Average ⭐ Stars:&nbsp;{average}</p>
       <p>Total Reviews: {recent.length}</p>
       <BarChart
@@ -98,7 +98,8 @@ export const AdminPage = () => {
         layout="horizontal"
         {...chartSetting}
       />
-      
+      <br/>
+      <h2>Reactions to Services:</h2>
       <div style={{marginRight: `calc(100vw)`, minWidth: 500}}>
        <BarChart
         width="350"
@@ -120,7 +121,8 @@ export const AdminPage = () => {
       </BarChart>
       </div>
 
-      
+      <br/>
+      <h2>Table of Comments:</h2>
       <div>
         <table className="cfstable">
           <thead className="cfsrow">
@@ -142,7 +144,7 @@ export const AdminPage = () => {
                 </td>
               }
               {!isPaid &&
-                <td className="cfscell" style={{color: "#FF0000"}}>
+                <td className="cfscell" style={{fontWeight: 'bold'}}>
                   "Upgrade Plan to Turn On"
                 </td>
               }

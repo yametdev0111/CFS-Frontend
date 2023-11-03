@@ -28,7 +28,7 @@ export const ReviewPage = ( props ) => {
   return (
     <BoxContainer>
       <br />
-      {logo !== '' && <img src={logo} style={{width: '65%'}} alt="logo" />}
+      {logo !== null && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <Label text="We will use your valuable feedback to improve our service and make the overall experience better." />
