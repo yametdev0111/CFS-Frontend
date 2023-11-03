@@ -73,7 +73,7 @@ export const AdminPage = () => {
         alignItems: "center",
       }}
     >
-      {logo !== undefined || ""  && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== null && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <h1>Feedback Dashboard</h1>
       <h2>Results Summary:</h2>
       <p>Average ⭐ Stars:&nbsp;{average}</p>

@@ -12,7 +12,7 @@ export const ConfirmPage = ( props ) => {
   return (
     <BoxContainer>
       <br />
-      {logo !== undefined || ""  && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== null && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <Label text="We received your feedback. Thanks! 🙂" />

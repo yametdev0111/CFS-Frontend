@@ -52,6 +52,7 @@ export const UploadPage = () => {
       (result) => setExist(exsit + 1),
       (result) => {
         setLogo(result.logo); 
+        console.log("sdfsdf")
         console.log(result.logo)
         setStar(result.star);
         setButton(result.button);
@@ -67,7 +68,7 @@ export const UploadPage = () => {
   return (
     <BoxContainer>
       <br />
-      {logo !== undefined || ""  && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== undefined && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <input type="file" accept="image/*" onChange={handleImageUpload} />

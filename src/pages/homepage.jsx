@@ -10,7 +10,8 @@ import { useDispatch } from "react-redux";
 export const Homepage = ( props ) => {
   const dispatch = useDispatch();
   const { rating, setRating, review, setReview, logo, star, button } = props;
-
+  console.log("helklo")
+  console.log(logo)
   const onSubmit = () => {
     if(!rating){
       alert("Please rate the services.");
@@ -25,7 +26,7 @@ export const Homepage = ( props ) => {
   return (
     <BoxContainer>
       <br />
-      {logo !== undefined || ""  && <img src={logo} style={{width: '350px'}} alt="logo" />}
+      {logo !== null && <img src={logo} style={{width: '350px'}} alt="logo" />}
       <br />
       <br />
       <Label text="How was our service today?" lineHeight={0} />
